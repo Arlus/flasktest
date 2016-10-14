@@ -1,0 +1,21 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Index{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% endblock %}
+
+<!-- Additional script -->
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{{ moment.lang('en') }}
+<script type="text/javascript" src="my-script.js"></script>
+{% endblock %}
